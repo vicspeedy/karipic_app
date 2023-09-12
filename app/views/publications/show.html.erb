@@ -1,0 +1,42 @@
+<p style="color: green"><%= notice %></p>
+
+<br>
+<h2>Publicación</h2>
+<br>
+
+<%= render @publication %>
+
+<div class = "btn-group">
+  <%= link_to "Back", publications_path, class:"btn btn-outline-secondary" %>
+  <%= link_to " Edit", edit_publication_path(@publication), class:"btn btn-outline-warning bi bi-pen" %> 
+</div>
+
+<div class = "btn-group">
+  <%= button_to " Delete", @publication, method: :delete, class:"btn btn-outline-danger bi bi-x-lg" %>
+</div>
+
+<br>
+
+<hr>
+
+<br>
+<!-- Start *TODO: "comentarios a vista show" -->
+  <div class="card">
+    <div class="card-content">
+      <div class="content">
+        <div class="container">
+          <strong>Realizar Comentario:</strong><br> <%= render 'comments/form' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<br><br>
+<div class="container">
+  <strong><h4><mark>Comentarios:</mark></h4></strong>
+  <div class="card text-bg-light ">
+    <div class="card-body">
+      <%= render 'comments/publication_comments' %>
+    </div>
+  </div>
+</div>

@@ -4,6 +4,16 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
+    <%= f.label :name %> <br>
+    <%= f.text_field :name, autocomplete: "new-name" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :photo, style: "display: block" %>
+    <%= f.file_field :photo, accept: "image/*", required: true %>
+  </div>
+  
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
@@ -20,6 +30,8 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
+
+  <br>
 
   <div class="actions">
     <%= f.submit "Sign up" %>

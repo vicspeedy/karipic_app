@@ -1,0 +1,16 @@
+<br>
+<h2>Editar publicación</h2>
+<br>
+
+<div class="container" style="background-color: #d3d3d3;" >
+  <br>
+  <%= render "form", publication: @publication %>
+  <br>
+</div>
+
+<br>
+
+<div class = "btn-group">
+  <%= link_to "Show", @publication, class:"btn btn-outline-secondary" %>
+  <%= link_to "Back", publications_path, class:"btn btn-outline-secondary" %>
+</div>

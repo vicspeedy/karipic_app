@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :publications
+  resources :comments, only: [:create]
   devise_for :users,  controllers: { registrations: 'registrations' },
                       path: '',
                       path_names: { sign_in: 'login',
@@ -8,4 +10,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  root "publications#index"
 end

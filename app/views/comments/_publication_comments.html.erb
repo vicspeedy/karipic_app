@@ -1,0 +1,23 @@
+<!-- Start *TODO: "Agregamos comentarios a la vista show del artículo" -->
+<div class="container">
+    <% @comments.each do |comment| %>
+
+        <div class="card w-75">
+            <p class="subtitle">
+                <div class="owner-avatar">
+
+                    <% if comment.user.photo.attached? %>
+                      <%= image_tag comment.user.photo, class: 'rounded-circle', style: "width:45px; height:45px;"  %>
+                    <% else %>
+                      <img src="https://picsum.photos/200/300" alt="" class="rounded-circle", style="width:45px; height:45px;">
+                    <% end %>
+
+                </div>
+                <div class="container">
+                  <strong>Comentario: </strong><%= comment.content %>
+                </div>
+            </p>
+        </div><br>
+    <% end %><br>
+</div>
+<!-- End *TODO: "" -->

@@ -7,11 +7,11 @@ class RegistrationsController < Devise::RegistrationsController
   # Metodo que permite actualizar
   def configure_permitted_parameters
     added_attrs = %i[ email password password_confirmation remember_me
-                      name bio ]
+                      name photo ]
     # Cuando se registre
-    devise_parameter_sanitizer.permit :sign_up, keys: %i[email password password_confirmation]
+    devise_parameter_sanitizer.permit :sign_up, keys: %i[email password password_confirmation photo]
     # Inicie session 
-    devise_parameter_sanitizer.permit :sign_in, keys: %i[email password remember_me]
+    devise_parameter_sanitizer.permit :sign_in, keys: %i[email password remember_me photo]
     # Actualizar cuenta
     devise_parameter_sanitizer.permit :account_update, keys: added_attrs
   end
